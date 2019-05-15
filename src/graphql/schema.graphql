@@ -1546,12 +1546,12 @@ type Query {
   ): InvoiceType
 
   """
-  
+
       Given a collective, returns all its transactions:
       - Debit transactions made by collective without using a virtual card
       - Debit transactions made using a virtual card from collective
       - Credit transactions made to collective
-      
+
   """
   allTransactions(CollectiveId: Int, collectiveSlug: String, type: String, limit: Int, offset: Int, dateFrom: String, dateTo: String, includeVirtualCards: Boolean, fetchDataFromLedger: Boolean, includeHostedCollectivesTransactions: Boolean): [Transaction]
   transactions(
@@ -1911,6 +1911,7 @@ input UpdateInputType {
   slug: String
   title: String
   image: String
+  isPrivate: Boolean
   markdown: String
   html: String
   fromCollective: CollectiveAttributesInputType
@@ -1924,6 +1925,7 @@ type UpdateType {
   views: Int
   slug: String
   image: String
+  isPrivate: Boolean
   title: String
   createdAt: String
   updatedAt: String
