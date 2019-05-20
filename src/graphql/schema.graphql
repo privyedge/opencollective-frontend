@@ -1927,7 +1927,11 @@ type UpdateType {
   slug: String
   image: String
   isPrivate: Boolean
-  isContentAvailable: Boolean
+
+  """
+  Indicates whether or not the user is allowed to see the content of this update
+  """
+  userCanSeeUpdate: Boolean
   title: String
   createdAt: String
   updatedAt: String
