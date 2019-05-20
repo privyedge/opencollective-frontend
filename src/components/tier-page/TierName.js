@@ -123,7 +123,7 @@ class TierName extends Component {
     } else if (!name) {
       return !canEdit ? null : (
         <Flex justifyContent="center">
-          <StyledButton buttonSize="large" onClick={this.enableEditor}>
+          <StyledButton buttonSize="large" onClick={this.enableEditor} data-cy="AddTierNameBtn">
             <FormattedMessage id="TierPage.AddTitle" defaultMessage="Add a title to this tier" />
           </StyledButton>
         </Flex>
@@ -133,7 +133,7 @@ class TierName extends Component {
         <Container position="relative">
           {canEdit && (
             <Container position="absolute" top={0} right={0}>
-              <EditIcon size={24} onClick={this.enableEditor} />
+              <EditIcon size={24} onClick={this.enableEditor} data-cy="EditTierNameBtn" />
             </Container>
           )}
           <H1 textAlign="left" color="black.900" wordBreak="break-word">

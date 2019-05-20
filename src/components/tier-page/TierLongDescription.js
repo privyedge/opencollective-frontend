@@ -128,7 +128,7 @@ class TierLongDescription extends Component {
     } else if (!description) {
       return !canEdit ? null : (
         <Flex justifyContent="center" mt={5}>
-          <StyledButton buttonSize="large" onClick={this.enableEditor}>
+          <StyledButton buttonSize="large" onClick={this.enableEditor} data-cy="AddTierLongDescriptionBtn">
             <FormattedMessage id="TierPage.AddDescription" defaultMessage="Add a description to this tier" />
           </StyledButton>
         </Flex>
@@ -138,7 +138,7 @@ class TierLongDescription extends Component {
         <Container position="relative">
           {canEdit && (
             <Container position="absolute" top={0} right={0}>
-              <EditIcon size={24} onClick={this.enableEditor} />
+              <EditIcon size={24} onClick={this.enableEditor} data-cy="EditTierLongDescriptionBtn" />
             </Container>
           )}
           <LongDescription dangerouslySetInnerHTML={{ __html: description }} />
